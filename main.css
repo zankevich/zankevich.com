@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'eva-custom';
+  src:  url('fonts/eva-custom.eot?pm0wh9');
+  src:  url('fonts/eva-custom.eot?pm0wh9#iefix') format('embedded-opentype'),
+    url('fonts/eva-custom.ttf?pm0wh9') format('truetype'),
+    url('fonts/eva-custom.woff?pm0wh9') format('woff'),
+    url('fonts/eva-custom.svg?pm0wh9#eva-custom') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  font-family: 'eva-custom' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+i:hover {
+  transform: scale(1.15);
+  transition: transform .5s, visibility .5s ease-out;
+}
+
+.eva-custom-email-outline:before {
+  content: "\e900";
+}
+.eva-custom-github-outline:before {
+  content: "\e901";
+}
+.eva-custom-linkedin-outline:before {
+  content: "\e902";
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  margin: 0;
+  height: 100vh;
+  color: whitesmoke;
+  background-color: black;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  font-size: 24px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.current-job {
+  color: #2c7df7;
+  text-decoration: underline;
+}
+
+.contacts-card {
+  margin: auto;
+}
+
+.contacts-card__title {
+  margin: 0;
+}
+
+.contacts-card__subtitle {
+  margin: 0
+}
+
+.contacts-card__contacts {
+  margin-top: 5px;
+}
