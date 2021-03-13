@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'eva-custom';
-  src:  url('fonts/eva-custom.eot?pm0wh9');
-  src:  url('fonts/eva-custom.eot?pm0wh9#iefix') format('embedded-opentype'),
+  src: url('fonts/eva-custom.eot?pm0wh9');
+  src: url('fonts/eva-custom.eot?pm0wh9#iefix') format('embedded-opentype'),
     url('fonts/eva-custom.ttf?pm0wh9') format('truetype'),
     url('fonts/eva-custom.woff?pm0wh9') format('woff'),
     url('fonts/eva-custom.svg?pm0wh9#eva-custom') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 i {
@@ -24,15 +25,17 @@ i {
 
 i:hover {
   transform: scale(1.15);
-  transition: transform .5s, visibility .5s ease-out;
+  transition: transform 0.5s, visibility 0.5s ease-out;
 }
 
 .eva-custom-email-outline:before {
   content: "\e900";
 }
+
 .eva-custom-github-outline:before {
   content: "\e901";
 }
+
 .eva-custom-linkedin-outline:before {
   content: "\e902";
 }
