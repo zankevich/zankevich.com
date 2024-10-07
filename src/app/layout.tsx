@@ -2,47 +2,51 @@ import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Person, WithContext } from 'schema-dts';
+import config from '@/config';
 import './globals.css';
 
 
-const title = 'Artyom Zankevich | Software Engineer, Manager, Mentor | Expert in Frontend Development, Backend Development, and Cloud Services';
-const description = 'Artyom Zankevich — Software Engineer working with JavaScript / TypeScript, Angular / React / React Native / Ionic, Ruby / Ruby on Rails, HTML / CSS / SASS and more.';
-const image = 'https://secure.gravatar.com/avatar/b0f3fe3a6f5afeb2a8955d8d78f5ede0';
-
 export const metadata: Metadata = {
-  title,
-  description,
-  creator: 'Artyom Zankevich',
-  authors: [{ name: 'Artyom Zankevich', url: 'https://www.zankevich.com' }],
+  metadataBase: new URL(config.siteUrl),
+  title: config.title,
+  description: config.description,
+  creator: config.author,
+  authors: [{ name: config.author, url: config.siteUrl }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
-    title,
-    description,
-    url: 'https://www.zankevich.com',
-    images: image,
+    title: config.title,
+    siteName: config.title,
+    description: config.description,
+    url: '/',
   },
   twitter: {
     card: 'summary',
     site: '@ArtyomZankevich',
     creator: '@ArtyomZankevich',
-    title,
-    description,
-    images: image,
+    title: config.title,
+    description: config.description,
   },
 };
 
 const jsonLdPerson: WithContext<Person> = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Artyom Zankevich',
+  name: config.author,
   givenName: 'Artyom',
   familyName: 'Zankevich',
-  gender: 'http://schema.org/Male',
-  nationality: 'Belarusian',
+  gender: 'https://schema.org/Male',
+  nationality: {
+    '@type': 'Country',
+    name: 'Belarus',
+    url: 'https://en.wikipedia.org/wiki/Belarus',
+  },
   birthDate: '1992-07-29',
   email: 'artyom@zankevich.com',
-  url: 'https://www.zankevich.com',
-  image,
+  url: config.siteUrl,
+  image: 'https://secure.gravatar.com/avatar/b0f3fe3a6f5afeb2a8955d8d78f5ede0?s=200',
   jobTitle: 'Head of Web Department',
   worksFor: {
     '@type': 'Organization',
@@ -58,9 +62,9 @@ const jsonLdPerson: WithContext<Person> = {
     sameAs: 'https://en.wikipedia.org/wiki/Belarusian_State_University'
   },
   sameAs: [
+    config.siteUrl,
     'https://linkedin.com/in/zankevich',
     'https://github.com/zankevich',
-    'https://www.zankevich.com',
     'https://x.com/ArtyomZankevich',
     'https://www.instagram.com/artyom.zankevich'
   ],
@@ -80,8 +84,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
+      <body className="bg-slate-900">
         {children}
         <script
           type="application/ld+json"
